@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<orbitvu>
+  <sequence3d hangles="105" name="a_" vangles="1">
+    <scales>
+      <scale width="1024" cols="1" tile_width="1024" tile_height="1024" height="1024" rows="1" value="100.0"/>
+      <scale width="768" cols="1" tile_width="768" tile_height="768" height="768" rows="1" value="75.0"/>
+      <scale width="512" cols="1" tile_width="512" tile_height="512" height="512" rows="1" value="50.0"/>
+      <scale width="256" cols="1" tile_width="256" tile_height="256" height="256" rows="1" value="25.0"/>
+      <scale width="128" cols="1" tile_width="128" tile_height="128" height="128" rows="1" value="12.5"/>
+    </scales>
+    <images maxHeight="1024" maxWidth="1024" ext="jpg" name="a_"/>
+  </sequence3d>
+  <images/>
+  <properties>
+    <property type="text" name="name">CERTUS_bordo-bialy</property>
+    <property type="text" name="author"></property>
+    <property type="text" name="category1"></property>
+    <property type="text" name="category2"></property>
+  </properties>
+</orbitvu>
