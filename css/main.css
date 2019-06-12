@@ -187,7 +187,8 @@ button.step-back-button:hover>span{background-color:red}
     align-items: center;
     justify-content: flex-end;
     width: calc(100% - 80px);
-}.lamp-button-div::before{content:" ";position:absolute;top:-49px;height:50px;width:100%;background-image:linear-gradient(to bottom,rgba(255,0,0,0),rgba(255,255,255,1))}
+}
+.lamp-button-div::before{content:" ";position:absolute;top:-49px;height:50px;width:100%;background-image:linear-gradient(to bottom,rgba(255,0,0,0),rgba(255,255,255,1))}
 p.lamp-scroll-text{font-size:11px;line-height:20px;padding-bottom:80px}
 /*p.lamp-scroll-text.short-scroll{padding-bottom:150px}*/
 .lamp-additional-price{width:60px;text-align:end;position:absolute; right:0}
@@ -582,7 +583,7 @@ button.assyst-accept{width:185px;height:34px;background-color:#B62830;color:#fff
     background-color: #fff;
 }
 .color-pop-up{display:none}
-.block-colorified-seats{display:none}
+.block-colorified-seats{display:block}
 #pompy-additional .fotel-description{width:200px}
 .model-color-place{display:none}
 .mikro-light-choose .tab2-button-place{display:flex;align-items: center}
@@ -677,4 +678,27 @@ button.assyst-accept{width:185px;height:34px;background-color:#B62830;color:#fff
 
 #tab7 .model-over-hidden{padding-bottom: 0;}
 
+
+#tab3 .color1 {background: #e4d4b2}
+#tab3 .color2 {background: #eb781b}
+#tab3 .color3 {background: #441817}
+#tab3 .color4 {background: #3f2a3d}
+#tab3 .color5 {background: #0c131b}
+#tab3 .color6 {background: #899b25}
+#tab3 .color7 {background: #dc9624}
+#tab3 .color8 {background: #2d506c}
+#tab3 .color9 {background: #1c1d1f}
+#tab3 .color10 {background: #b6af9f}
+#tab3 .color11 {background: #20b2bf}
+#tab3 .color12 {background: #a8724e}
+
+.statement:not(.active) {display: none}¶
+#tab7 .additional-tab:not(.active) {display: none}¶
+#tab7 .additional-tab.active {width: 100%; display: flex}¶
+#tab7 .locked {border: 1px solid rgb(182, 40, 48);}¶
+#tab7 .disabled {pointer-events: none;}¶
+
+
+.color-img:not(.selected), .color-img.additional-img {display: none !important }
+.lacquer-type-wrapper.available.additional-cost {opacity: 1; pointer-events: auto}
 
