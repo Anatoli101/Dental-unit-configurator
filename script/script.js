@@ -322,7 +322,7 @@ $(document).ready(function () {
         // confirmStep();
 
         $(".step-2-button").addClass("nextStepActive");
-    });
+
 
     $(document).on('click touch', '#tab3 .choose-the-color', function() {
         $(".step-3-button").addClass("nextStepActive");
