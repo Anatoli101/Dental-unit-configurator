@@ -313,7 +313,81 @@ $(document).ready(function () {
                 }
             });
 
-           
+            if(valueOfAttribute === "certus-neo") {
+                // $(".doctor-panel-img").append(certus_neo.panel_lekarza);
+                // $(".assyst-content-wrapper").append(certus_neo.panel_asysty);
+                // $(".assyst-step2-content").append(certus_neo.panel_asysty_numbers);
+
+                // $(".lacquer-type-wrapper").css("opacity", "1");
+                // $(".lacquer-type-wrapper").css("pointer-events", "all");
+                // $(currentBrand + "-brand-color.block-colorified-seats").show();
+                // $(".model-color-place").hide();
+                // currentnModel = ".certus-neo";
+                // $(".choose-color").css("display", "flex");
+                // $(".lacquer-type-wrapper").css("display", "flex");
+                $('.see-360-color').show()
+            }
+            else if(valueOfAttribute === "certus-max") {
+                // $(".doctor-panel-img").append(certus_max.panel_lekarza);
+                // $(".assyst-content-wrapper").append(certus_max.panel_asysty);
+                // $(".assyst-step2-content").append(certus_max.panel_asysty_numbers);
+
+                // $(".lacquer-type-wrapper").css("opacity", "1");
+                // $(".lacquer-type-wrapper").css("pointer-events", "all");
+                // $(".model-color-place").show();
+                // $(".model-color-place").append("<img style=\'width:400px\' src=\"/konfigurator/img/img_panel_komplet_certus_max@2x.png\">");
+                // currentnModel = ".certus-max";
+            }
+            else if(valueOfAttribute === "certus-standard") {
+                // $(".doctor-panel-img").append(certus_standard.panel_lekarza);
+                // $(".assyst-content-wrapper").append(certus_standard.panel_asysty);
+                // $(".assyst-step2-content").append(certus_standard.panel_asysty_numbers);
+                // $(".attention-block-wrapper").css("display", "block");
+
+                // $(".model-color-place").show();
+                // $(".model-color-place").append("<img style=\'width:400px\' src=\"/konfigurator/img/img_panel_komplet_certus_standard@2x.png\">");
+                // currentnModel = ".certus-standart";
+            }
+            else if(valueOfAttribute === "exima-neo") {
+                // $(".doctor-panel-img").append(exima_neo.panel_lekarza);
+                // $(".assyst-content-wrapper").append(exima_neo.panel_asysty);
+                // $(".assyst-step2-content").append(exima_neo.panel_asysty_numbers);
+
+                // $(currentBrand + "-brand-color.block-colorified-seats").show();
+                // $(".model-color-place").hide();
+                // $(".choose-color").css("display", "flex");
+                // $(".lacquer-type-wrapper").css("display", "flex");
+                // currentnModel = ".exima-neo";
+                $(".see-360-color").show();
+            }
+            else if(valueOfAttribute === "exima-max") {
+                // $(".doctor-panel-img").append(exima_max.panel_lekarza);
+                // $(".assyst-content-wrapper").append(exima_max.panel_asysty);
+                // $(".assyst-step2-content").append(exima_max.panel_asysty_numbers);
+
+                // $(".model-color-place").show();
+                // $(".model-color-place").append("<img style=\'width:400px\' src=\"/konfigurator/img/img_panel_komplet_exima_max@2x.png\">");
+                // currentnModel = ".exima-max";
+            }
+            else if(valueOfAttribute === "exima-x1g") {
+                // $(".doctor-panel-img").append(exima_x1g.panel_lekarza);
+                // $(".assyst-content-wrapper").append(exima_x1g.panel_asysty);
+                // $(".assyst-step2-content").append(exima_x1g.panel_asysty_numbers);
+
+                // $(".model-color-place").show();
+                // $(".model-color-place").append("<img class=\"small-panel\" style=\'width:400px\' src=\"/konfigurator/img/img_panel_komplet_exima_standard_x1g@2x.png\">");
+                // currentnModel = ".exima-x1g";
+            }
+            else if(valueOfAttribute === "exima-x1d") {
+                // $(".doctor-panel-img").append(exima_x1d.panel_lekarza);
+                // $(".assyst-content-wrapper").append(exima_x1d.panel_asysty);
+                // $(".assyst-step2-content").append(exima_x1d.panel_asysty_numbers);
+
+                // $(".model-color-place").show();
+                // $(".model-color-place").append("<img class=\"small-panel\" style=\'width:400px\' src=\"/konfigurator/img/img_panel_komplet_exima_standard_x1d@2x.png\">");
+                // currentnModel = ".exima-x1d";
+            }
+        }
 
         // seatPrice = seatPrice + doctorPanel; //update ceny
         priceLabel('#tab2','',seatPrice);
@@ -322,12 +396,19 @@ $(document).ready(function () {
         // confirmStep();
 
         $(".step-2-button").addClass("nextStepActive");
-
+    });
 
     $(document).on('click touch', '#tab3 .choose-the-color', function() {
+
+        // $('.choose-the-color').children("span").removeClass("icon-icon_check");
+        // $(".choose-the-color.color-seat").removeClass('color-active');
+        // $("#" + $(this).attr("id")).children("span").addClass("icon-icon_check");
+        // $('.choose-the-color.color-seat#' + $(this).attr("id")).children("span").addClass("icon-icon_check");
+        // $('.choose-the-color.color-seat#' + $(this).attr("id")).addClass('color-active');
         $(".step-3-button").addClass("nextStepActive");
 
 
+        // $(".color-img").hide();
         seatColor = $(this).attr("id");
 
         if(!$(this).hasClass('selected')) {
@@ -2706,7 +2787,7 @@ $(document).ready(function () {
         // changeCurrentCongig(getTabId);
         confirmStep();
         // confirmSelected();
-
+        confirmStep();
         setCurrentProductNameCallback();
         console.log('aktualnie obslugujesz model: '+dataBrand);
         console.log('aktualnie jestes w kroku: '+$(target_tab_selector).attr('id'));
@@ -2738,10 +2819,20 @@ $(document).ready(function () {
         $(target_tab_selector).removeClass('hide');
         $(target_tab_selector).addClass('active');
         var getTabId = $(this).text().toLowerCase();
+
+
+        confirmStep();
+        setCurrentProductNameCallback();
         // changeCurrentCongig(getTabId);
     });
 
+    function numberWithSpaces(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    }
 
+    function numberWithoutSpaces(x) {
+        return x.toString().replace(" ", "");
+    }
 
 
     function confirmStep() {
@@ -2799,7 +2890,8 @@ $(document).ready(function () {
         // console.log("CENA PANEL DOKTORA: "+doctorPanel);
         // currentPrice = currentPrice + doctorPanel;
         // currentPrice = currentPrice + step1Cost;
-        $(".header-price .price-number").attr('data-total-price', parseInt(currentPrice));
+        $(".header-price .price-number").attr('data-total-price', numberWithSpaces(currentPrice));
+        // $(".header-price .price-number").attr('data-total-price', parseInt(currentPrice));
         $(".header-price .price-number .pr").text($(".header-price .price-number").attr('data-total-price'));
     }
 
@@ -2867,39 +2959,42 @@ $(document).ready(function () {
     }
 
     setDefaultInvoiceRow();
+
+
     function createInvoice() {
         confirmSelected();
         var totalInvoicePrice = 0;
-        var totalPrice = parseInt($('.header-price .pr').text());
+        var totalPrice = parseInt(numberWithoutSpaces($('.header-price .pr').text()));
+
         $.each($('[data-invoice-row]'),function() {
             var invoiceAttr = $(this).attr('data-invoice-row');
             if($(this).attr('data-confirmed')) {
                 var invoiceRow = $('#tab8').find("#"+invoiceAttr);
+
                 if(invoiceRow.hasClass('hidden')) {
+                    console.log('is hidden')
                     var number = $(this).closest('.model-card-cover').find('input[type="number"]')
                     if(number.length) {
                         var number = parseInt(number.val());
-                        invoiceRow.find('.version .counter').text(number);
-                        invoiceRow.find('.price-label .pr').text(number * parseInt($(this).attr('data-price')));
+                        invoiceRow.find('.version .counter').text(number+'szt ');
+                        invoiceRow.find('.price-label .pr').text(number * numberWithSpaces($(this).attr('data-price')));
                         totalInvoicePrice = totalInvoicePrice + (number * parseInt($(this).attr('data-price')));
                     }
                     else {
-                        invoiceRow.find('.price-label .pr').text($(this).attr('data-price'));
+                        invoiceRow.find('.price-label .pr').text(numberWithSpaces($(this).attr('data-price')));
                         totalInvoicePrice = totalInvoicePrice + parseInt($(this).attr('data-price'))
                     }
 
                     invoiceRow.removeClass('hidden');
                     invoiceRow.find('.version .label').text($(this).attr('data-name'));
-                    console.log('data-price: '+parseInt($(this).attr('data-price')));
-
-
-
                 }
             }
         })
+
+
         console.log('INVOICE: '+totalInvoicePrice+', TOTAL: '+totalPrice);
         if(totalPrice === totalInvoicePrice) {
-            $('#invoice .total-price-invoice').text(totalInvoicePrice)
+            $('#invoice .total-price-invoice').text(numberWithSpaces(totalInvoicePrice));
         }
         else {
             $('#invoice .total-price-invoice').text("BŁĄD LICZENIA!!");
@@ -2912,6 +3007,9 @@ $(document).ready(function () {
             if(!$(this).hasClass('hidden')) {
                 $(this).addClass('hidden')
             }
+            // if($(this).is(':visible')) {
+            //     $(this).css({'display':'none'})
+            // }
             $.each($(this).find('[data-default]'), function() {
                 $(this).text($(this).attr('data-default'));
             })
@@ -2919,37 +3017,149 @@ $(document).ready(function () {
         $('#invoice .total-price-invoice').text($('#invoice .total-price-invoice').attr('data-default'))
     }
 
-
     $(document).on('click touch', '.print-pdf-button', function() {
-        var pdf = new jsPDF('1', 'pt', 'letter');
-        source = $('#invoice')[0];
-
-        specialElementHandlers = {
-            '#bypassme': function (element, renderer) {
-                return true
+        $.each($('#invoice .invoice-row'),function() {
+            if($(this).hasClass('hidden')) {
+                $(this).remove();
             }
-        };
-        margins = {
-            top:50,
-            bottom: 50,
-            left: 80,
-            right: 80,
-        };
-        pdf.fromHTML(
-            source,
-            margins.left,
-            margins.top, {
-                'elementHandlers': specialElementHandlers
-            },
+        })
+        // e.preventDefault();
+        var el = $("#invoice").html();
+        console.log(el)
+        el = el.replace(/(\r\n|\n|\r)/gm, " ");
+        $("#textarea-for-print").text(el)
+    });
 
-            function (dispose) {
-                pdf.save('makromed.pdf');
+
+    // $(document).on('click touch', '.print-pdf-button', function() {
+    //     var pdf = new jsPDF('1', 'pt', 'letter','Non-utf-8-string');
+    //     source = $('#invoice')[0];
+    //
+    //     var imageURL1 = 'data:image/png;base64,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';
+    //     var imageURL2 = 'data:image/png;base64,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';
+    //     pdf.addImage(imageURL1,'PNG',15,40,100,100);
+    //     pdf.addImage(imageURL2,'PNG',150,200,100,100);
+    //     specialElementHandlers = {
+    //         '#bypassme': function (element, renderer) {
+    //             return true
+    //         }
+    //     };
+    //     margins = {
+    //         top:50,
+    //         bottom: 50,
+    //         left: 80,
+    //         right: 80,
+    //     };
+    //     pdf.fromHTML(
+    //         source,
+    //         margins.left,
+    //         margins.top, {
+    //             'elementHandlers': specialElementHandlers
+    //         },
+    //
+    //         function (dispose) {
+    //
+    //             pdf.save('makromed.pdf');
+    //         }
+    //     );
+    // })
+
+
+
+
+    /*
+    $(document).on('change', '#tab5 .tab-as-trigger [type="radio"]', function() {
+        if($(this).is(":checked")) {
+            if($(this).hasClass('selected')) {
+                console.log($(this).attr('data-variant'));
+                var variant = $(this).attr('data-variant');
+
+                if(!$('#tab5 [data-tab="mikro-el-internal"]').hasClass('active')) {
+                    $('#tab5 [data-tab="mikro-el-internal"]').addClass('active');
+                }
+
+                $.each($('#tab5 .tab-content-internal-2 .choose-to-continue'),function() {
+                    if($(this).hasClass('active')) {
+                        $(this).removeClass('active');
+                    }
+                })
+
+                if(!$('#tab5 .tab-content-internal-2 .choose-to-continue.'+variant).hasClass('active')) {
+                    $('#tab5 .tab-content-internal-2 .choose-to-continue.'+variant).addClass('active')
+                }
             }
-        );
+        }
+
     })
 
+*/
 
 
+
+    // $(".panel-checkbox-div").click(function () {
+    //     $(".checkbox-card").removeClass("checkbox-card-active");
+    //     $(this).parent().parent().addClass("checkbox-card-active");
+    // });
+
+
+/*
+    $(document).on('click touch', ".tab1-accept",function () {
+        $.each($('#tab5 .doctor-tab'),function() {
+            if($(this).is(':visible')) {
+                console.log('visible');
+                $(this).hide()
+            }
+        })
+        $(".doctor-tab-1").hide();
+        $(".doctor-tab-2").hide();
+        $(".doctor-panel-title").show();
+        $(".doctor-panel-top").show();
+        $(".doctor-panel-row").show();
+        let w = curentDoctorTab.toString();
+        $(".doctor-choice-icon" + w + " .choosen-brand-sign").removeClass("icon-icon_loading");
+        $(".doctor-choice-icon" + w).addClass("icon-icon_check");
+        $(".doctor-panel-title").show();
+        $(".panel-card-cover.d-panel1 .panel-span").addClass(checkSign);
+        $(".d-panel1 .panel-card-title").text("Wybrano");
+        $(".panel-result-1").text("Strzykawko-dmuchawka")
+    });
+*/
+    // $(".tab1-cancel").click(function () {
+    //     $(".doctor-tab-1").hide();
+    //     $(".doctor-tab-2").hide();
+    //     $(".doctor-panel-title").show();
+    //     $(".doctor-panel-top").show();
+    //     $(".doctor-panel-row").show();
+    // });
+
+
+    // $(".color-color").click(function () {
+    //     if (currentBrand === ".certus") {
+    //         $("img#" + seatColor).hide();
+    //
+    //
+    //         if (seatColor.length === 8 || seatColor.length === 9) {
+    //
+    //         } else {
+    //             seatColor += "_w"
+    //         }
+    //         $("img#" + seatColor).show();
+    //     }
+    //
+    // });
+
+    // $(".color-white").click(function () {
+    //     $("img#" + seatColor).hide();
+    //
+    //
+    //     if (seatColor.length === 8) {
+    //         seatColor = seatColor.substr("_w", 6);
+    //     } else if (seatColor.length === 9) {
+    //         seatColor = seatColor.substr("_w", 7);
+    //     }
+    //
+    //     $("img#" + seatColor).show();
+    // });
 
 
     //COLOR POP-UP
@@ -2972,23 +3182,980 @@ $(document).ready(function () {
 
 
 
+    /*
+    var panel_lekarza_tab1 = {
+        "type": "Strzykawko-dmuchawkę",
+        "brand": ""
+    };
+
+
+    $("#Mikrosilnik .checkbox-card label").click(function () {
+        modelTypeString = "Mikrosilnik";
+        modelNameString = $(this).parent().find("label").text();
+
+    });
+
+    $("#Skaler .checkbox-card label").click(function () {
+        modelTypeString = "Skaler";
+        modelNameString = $(this).parent().find("label").text();
+
+
+    });
+
+    $("#Turbina .checkbox-card label").click(function () {
+        modelTypeString = "Turbina";
+        modelNameString = $(this).parent().find("label").text();
+
+    });
+
+    $("#Piaskarka .checkbox-card label").click(function () {
+        modelTypeString = "Piaskarka";
+        modelNameString = $(this).parent().find("label").text();
+
+    });
+
+    $("#Lampa-pol .checkbox-card label").click(function () {
+        modelTypeString = "Lampa polimeryzacyjna";
+        modelNameString = $(this).parent().find("label").text();
+
+    });
+*/
+
+    // 7855
+
+
+
+
+// function calcPrice() {
+//   var price = 0;
+//   $('input:checked, button .icon-icon_check').each(function() {
+//     if($(this).is('input')) {
+//       var el = $(this);
+//     } else {
+//       var el = $(this).closest('button');
+//     }
+
+//     if($.isNumeric(el.attr('data-price'))) {  
+//       price = price + parseFloat(el.attr('data-price'));
+//       $(".price-number").text(price)
+//     }
+//   });
+
+
+// }
+//   $('input').on('change', function () {
+//     calcPrice();
+//   });
+//   $('button').on('click', function () {
+//     calcPrice();
+// });
+
+/*
+    $("button.tab2-cancel").click(function () {
+        $(".tab2-button-place button").removeClass("button-blue");
+        $(".doctor-tab-" + curentDoctorTab).hide();
+        $("#type-katnica").hide();
+        $(".mikrosilnik-elektric").hide();
+        $(".main-panel-wrapper").hide();
+        $(".doctor-panel-title").show();
+        $(".doctor-panel-top").show();
+        $(".doctor-panel-row").show();
+        $(".tab2-accept").hide();
+        $(".main-panel-wrapper").hide();
+        $(".doctor-choice-icon" + curentDoctorTab).removeClass("icon-icon_loading");
+        $(".katnica-wrapper").hide();
+        $(".mikro-light-choose").hide();
+        $(".mikrosilnik").hide();
+        $(".pneumatic-light-on").hide();
+        $(".pneumatic-light-off").hide();
+    });
+*/
+
+/*
+    $(".tab5-continue").click(function () {
+        let w = curentDoctorTab.toString();
+        $(".doctor-choice-icon" + w).addClass("icon-icon_check");
+
+        $(".doctor-tab-5").hide();
+        $(".doctor-panel-title").show();
+        $(".doctor-panel-top").show();
+        $(".doctor-panel-row").show();
+    });
+*/
+
+// Function to make separators " " in final price
+
+
+//function for refresh our price lebels
+// function refreshPriceInfo(kindOfProduct) {
+//   $(".pr").text(kindOfProduct);
+// }
+
+
+    // $(".additional-product-tab1").click(function () {
+    //     $(".kompressors-tab").hide();
+    //     $(".seat-and-additional").css("display", "flex");
+    // });
+    //
+    // $(".additional-product-tab2").click(function () {
+    //     $(".seat-and-additional").hide();
+    //     $(".kompressors-tab").css("display", "flex");
+    // });
+    //
+
+
+
+
+    // $("#tab6 .tab2-accept").click(function () {
+    //     $(".choose-assyst-product").hide();
+    //     $(".assyst-step2-content").show();
+    // });
+    //
+    // $("#tab6 .assyst-place").click(function () {
+    //     if ($(".assyst-place .assyst-span").hasClass("icon-icon_check")) {
+    //         $(".assyst-place .assyst-span").removeClass("icon-icon_check");
+    //     } else {
+    //         $(".assyst-place .assyst-span").removeClass("icon-icon_check");
+    //         $(".assyst-place .assyst-span").addClass('icon-icon_check');
+    //     }
+    //
+    // });
+
+
+
+
+/*
+//tutaj sie tabsy zaczynaja
+// DOCTOR PANEL MINI-TABS
+    $(".doctor-panel-choice").click(function () {
+        //UNCHECK TAB INPUTS WHEN CLICK ANOTHER MINI-TAB
+        if (!$(this).hasClass("button-blue")) {
+            let tabParent = $(this).parent().parent().attr("class");
+            let w = $("." + tabParent + " input").prop('checked', false);
+        }
+
+        $(".tab2-accept").hide();
+        // $(tabParent + " > input ").val(false)
+        let panelTabID = $(this).attr("id");
+        $(".doctor-panel-choice").removeClass("button-blue");
+        $(this).addClass("button-blue");
+        $(".main-panel-wrapper").hide();
+        $(".main-panel-wrapper." + panelTabID).show();
+        $(".turbina-attention").hide();
+        $(".checkbox-card").removeClass("card-active");
+        $(".turbina-with-light, .turbina-without-light").hide();
+        $(".turbina-light-choose button").removeClass("button-blue");
+        $(".skaler-light-choose, .skaler-el-light, .skaler-el-no-light, .skaler-pn-no-light, .skaler-attention-icon").hide();
+        $(".skaler-button-place button").removeClass("button-blue");
+    });
+
+
+    $(".tab2-button.turbina").click(function () {
+        $(".tab2-button.turbina").removeClass("button-blue");
+        $(this).addClass("button-blue")
+    });
+
+
+//MIKROSILNIK ELEKTRYCZNY CZY PNEUMATYCZNY
+    $(".mikrosilnik-type-button").click(function () {
+        $(".mikro-light-choose").hide();
+        $(".pneumatic-light-off").hide();
+        $(".pneumatic-light-on").hide();
+        $(".katnica-wrapper").hide();
+        $('.mikrosilnik').hide();
+        $(".mikrosilnik-type-button").removeClass("button-blue");
+        $(".mikro-light-choose .tab2-button-place button").removeClass('button-blue');
+        $(this).addClass("button-blue");
+
+        var mikro_id = $(this).attr("id");
+
+        if (mikro_id === "mikro-el") {
+            $('.mikrosilnik-elektric').show();
+            $(".mikro-attention-icon").hide();
+        } else if (mikro_id === "mikro-pn") {
+            $('.mikro-light-choose').show()
+        }
+    });
+
+
+    $(".mikro-light-choose .tab2-button-place button").click(function () {
+        let mikroLight = $(this).attr("id");
+        $(".mikro-light-choose .tab2-button-place button").removeClass('button-blue');
+        $(this).addClass("button-blue");
+        $(".mikro-attention-icon").hide();
+        $("#type-katnica, #type-prostnica").hide();
+        $(".katnica-choose").removeClass('button-blue');
+
+        if (mikroLight === "pneum-light") {
+            $(".pneumatic-light-off").hide();
+            $(".pneumatic-light-on").show()
+        } else if (mikroLight === "pneum-no-light") {
+            $(".pneumatic-light-on").hide();
+            $(".pneumatic-light-off").show()
+        }
+    });
+
+    var whatTheLight = 0;
+
+//MIKROSILNIK i KATNICA  Z PODSWIETLENIEM CZY BEZ
+    $(".mikrosilnik .panel-checkbox-div").click(function () {
+        let checkMikroLight = $(this).attr("id");
+
+        // CLEANING THE KATNICA/PROSTNICA SECTION
+        $(".katnica-choose .tab2-button").removeClass("button-blue");
+        $("#without-light").hide();
+        $("#with-light").hide();
+
+
+        $(".katnica-wrapper").show();
+        if (checkMikroLight === 'light-on') {
+            whatTheLight = 1;
+        } else if (checkMikroLight === 'light-off') {
+            whatTheLight = 0;
+        }
+    });
+
+    $(".pneumatic-mikrosilnik .panel-checkbox-div").click(function () {
+        let checkMikroLight = $(this).attr("id");
+
+
+        // CLEANING THE KATNICA/PROSTNICA SECTION
+        $(".katnica-choose .tab2-button").removeClass("button-blue");
+        $("#without-light").hide();
+        $("#with-light").hide();
+
+
+        $(".katnica-wrapper").show();
+        if (checkMikroLight === 'light-on') {
+            whatTheLight = 1;
+        } else if (checkMikroLight === 'light-off') {
+            whatTheLight = 0;
+        }
+    });
+
+
+// KATNICA OR PROSTNICA
+    $(".katnica-choose .tab2-button").click(function () {
+
+        // $(".tab2-bottom-accept").hide();
+        $(".katnica-choose .tab2-button").removeClass("button-blue");
+        $(this).addClass("button-blue");
+
+        let katn_prostn = $(this).attr('id');
+
+
+        var parent = $(this).closest('.katnica-wrapper');
+
+
+        if (katn_prostn === "katnica") {
+            parent.find("#type-katnica").show();
+            parent.find("#type-prostnica").hide();
+
+            if (whatTheLight === 0) {
+                parent.find("#without-light").show();
+            } else if (whatTheLight === 1) {
+                parent.find("#type-prostnica").hide();
+                parent.find("#type-katnica").show();
+                parent.find("#with-light.choose-to-continue").css("display", "flex");
+            }
+        } else if (katn_prostn === "prostnica") {
+            parent.find("#with-light").hide();
+            parent.find("#without-light").hide();
+            if (whatTheLight === 0) {
+                parent.find("#type-katnica").hide();
+                parent.find("#type-prostnica").show();
+                parent.find(".prostnica-without-light").css("display", "flex")
+            }
+        }
+    });
+
+    $(".tab-mikrosilnik .choose-to-continue .checkbox-card label").click(function () {
+        $(".tab2-accept").show();
+    });
+
+    $(".tab-turbina  .checkbox-card label").click(function () {
+        $(".tab2-accept").show();
+    });
+
+    $(".tab-skaler  .checkbox-card label").click(function () {
+        $(".tab2-accept").show();
+    });
+
+    $(".tab-piaskarka  .checkbox-card label").click(function () {
+        $(".tab2-accept").show();
+    });
+
+    $(".tab-polimer  .checkbox-card label").click(function () {
+        $(".tab2-accept").show();
+    });
+
+
+// TURBINA CHOOSE LIGHT
+    $(".turbina-light-choose button").click(function () {
+        $(".turbina-light-choose button").removeClass('blue-button');
+        $(this).addClass('blue-button');
+        // $(".tab2-bottom-accept").hide();
+        let turbinaId = $(this).attr("id");
+        $(".turbina-with-light input,  .turbina-without-light input").prop("checked", false);
+        $(".turbina-with-light .checkbox-card,  .turbina-without-light .checkbox-card").removeClass("checkbox-card-active");
+        $(".tab2-accept").hide();
+
+        if (turbinaId === "turbina-light") {
+            $(".turbina-with-light").css("display", "flex");
+            $(".turbina-without-light").hide();
+            // $(".turbina-attention-icon").show();
+            $(".turbina-attention.light-off-turbina.turbina-att-2").hide();
+        } else {
+            $(".turbina-with-light").hide();
+            $(".turbina-without-light").css("display", "flex");
+            $(".turbina-attention-icon").hide();
+            $(".turbina-attention.light-turbina.turbina-att-1").hide();
+        }
+    });
+
+// SKALER TYPE
+    $(".tab-skaler .tab2-button-place button").click(function () {
+        $(".tab-skaler .tab2-button-place button").removeClass("button-blue");
+        $(this).addClass("button-blue");
+        let skalerType = $(this).attr("id");
+
+
+        if (skalerType === "skaler-el") {
+            $(".skaler-light-choose").show();
+            $(".skaler-pn-no-light").hide();
+            $(".skaler-attention-icon").hide();
+        } else {
+            $(".skaler-light-choose").hide();
+            $(".skaler-pn-no-light").css("display", "flex");
+            $(".skaler-el-light").hide();
+            $(".skaler-el-no-light").hide();
+            $(".skaler-light-choose button").removeClass("button-blue");
+        }
+    });
+
+
+    $(".skaler-pn-no-light label").click(function () {
+        $(".skaler-attention-icon").show();
+    });
+
+
+// SKALER LIGHT TYPE
+    $(".skaler-light-choose button").click(function () {
+        let skalerLightType = $(this).attr('id');
+
+        $(".skaler-light-choose button").removeClass("button-blue");
+        $(this).addClass("button-blue");
+
+        if (skalerLightType === "skaler-light") {
+            $(".skaler-el-no-light").hide();
+            $(".skaler-el-light").css("display", "flex");
+        } else {
+            $(".skaler-el-light").hide();
+            $(".skaler-el-no-light").css("display", "flex");
+        }
+    });
+
+
+    $(".turbina-with-light .turbina--light label").click(function () {
+        $(".turbina-attention.light-turbina.turbina-att-1").css("display", "flex");
+        $(".turbina-attention-icon").show();
+    });
+
+    $(".turbina-without-light .turbina--no label").click(function () {
+        $(".turbina-attention.light-off-turbina.turbina-att-2").css("display", "flex");
+        $(".turbina-attention.light-turbina.turbina-att-1").hide();
+    });
+    */
+//tutaj tabsy sie koncza
+
+
+
 //Change Current Config Text
     changeCurrentCongig = (tabName) => {
         $(".current-configuration").text(tabName)
     }
 
 
+    // $(".assyst-type-buttons button").click(function () {
+    //     $(".assyst-type-buttons button").removeClass("button-blue");
+    //     $(this).addClass("button-blue");
+    //
+    //     let assyst_tab_id = $(this).attr('id');
+    //     assystType = $(this).text();
+    //
+    //     $(".assyst1-wrapper").hide();
+    //     $("#" + assyst_tab_id + ".assyst1-wrapper").show();
+    // });
+    //
+    // $("#assyst-ssak .tab2-button-place .tab2-button").click(function () {
+    //     $("#assyst-ssak .tab2-button-place .tab2-button").removeClass("button-blue");
+    //     $(this).addClass("button-blue");
+    // });
 
 
+//CHOOSE TABS IN TAB 7
 
-    $(".print-button-place").click(function () {
-        var el = $(".for-print-section").html();
-        let add = $(".footer-pdf").html();
-        el = el.replace(/(\r\n|\n|\r)/gm, " ");
-        el += add;
-        $("#textarea-for-print").text(el)
-        console.log(el)
+    /*
+    $(".tab7-mikro-tab").click(function () {
+        let mikroTab = $(this).attr("id");
+        $(".additional-tab").hide();
+        $("#" + mikroTab + ".additional-tab").css("display", "flex");
     });
+
+
+    $(".additional-product-close.icon-icon_close_small").click(function () {
+        $(this).parent().css("display", "none");
+    });
+
+
+    $(".final-seat.seat1 .dodatki-button .seat-final").click(function () {
+        let inputValue = $(this).parent().prev().children('input').val();
+
+
+        if (inputValue && inputValue > 0) {
+            $(this).parent().prev().children('input').css("border", "1px solid #81828E");
+            if ($(this).children('span').hasClass("icon-icon_check")) {
+                $(this).children('span').removeClass("icon-icon_check");
+                $(".additional-product-summary.rogal-element").css("display", "none");
+                $(this).parent().prev().children('input').val("0");
+            } else if (!$(this).children('span').hasClass("icon-icon_check")) {
+                $(this).children('span').addClass("icon-icon_check");
+                $(".additional-product-summary.rogal-element .additional-product-amount").text(inputValue + ' szt');
+                $(".additional-product-summary.rogal-element").css("display", "flex");
+                let a = $(this).attr("data-singe-price") * inputValue;
+                $(this).attr("data-price", a)
+            }
+        } else {
+            $(this).parent().prev().children('input').css("border", "1px solid #B62830");
+        }
+    });
+
+
+    $(".final-seat.seat2 .seat-final").click(function () {
+        let inputValue = $(this).parent().prev().children('input').val();
+
+
+        if (inputValue && inputValue > 0) {
+            $(this).parent().prev().children('input').css("border", "1px solid #81828E");
+            if ($(this).children('span').hasClass("icon-icon_check")) {
+                $(this).children('span').removeClass("icon-icon_check");
+                $(".additional-product-summary.siodlo-element").css("display", "none");
+                $(this).parent().prev().children('input').val("0");
+            } else if (!$(this).children('span').hasClass("icon-icon_check")) {
+                $(this).children('span').addClass("icon-icon_check");
+                $(".additional-product-summary.siodlo-element .additional-product-amount").text(inputValue + ' szt');
+                $(".additional-product-summary.siodlo-element").css("display", "flex");
+                let a = $(this).attr("data-singe-price") * inputValue;
+                $(this).attr("data-price", a)
+            }
+        } else {
+            $(this).parent().prev().children('input').css("border", "1px solid #B62830");
+        }
+    });
+
+
+// VALIDATION OF ADDITIONAL PRODUCT TAB 7
+    $("button.komp1").click(function () {
+        let inputValue = $(this).parent().prev().children('input').val();
+
+        if (inputValue && inputValue > 0) {
+            $(this).parent().prev().children('input').css("border", "1px solid #81828E");
+            if ($(this).children('span').hasClass("icon-icon_check")) {
+                $(this).children('span').removeClass("icon-icon_check");
+                $(".additional-product-summary.kompressor1").css("display", "none");
+                $(this).parent().prev().children('input').val("0");
+            } else if (!$(this).children('span').hasClass("icon-icon_check")) {
+                $(this).children('span').addClass("icon-icon_check");
+                $(".additional-product-summary.kompressor1 .additional-product-amount").text(inputValue + ' szt');
+                $(".additional-product-summary.kompressor1").css("display", "flex");
+                let a = $(this).attr("data-singe-price") * inputValue;
+                $(this).attr("data-price", a)
+
+            }
+        } else {
+            $(this).parent().prev().children('input').css("border", "1px solid #B62830");
+        }
+    });
+
+// VALIDATION OF ADDITIONAL PRODUCT TAB 7
+    $("button.komp2").click(function () {
+        let inputValue = $(this).parent().prev().children('input').val();
+
+        if (inputValue && inputValue > 0) {
+            $(this).parent().prev().children('input').css("border", "1px solid #81828E");
+            if ($(this).children('span').hasClass("icon-icon_check")) {
+                $(this).children('span').removeClass("icon-icon_check");
+                $(".additional-product-summary.kompressor2").css("display", "none");
+                $(this).parent().prev().children('input').val("0");
+            } else if (!$(this).children('span').hasClass("icon-icon_check")) {
+                $(this).children('span').addClass("icon-icon_check");
+                $(".additional-product-summary.kompressor2 .additional-product-amount").text(inputValue + ' szt');
+                $(".additional-product-summary.kompressor2").css("display", "flex");
+                let a = $(this).attr("data-singe-price") * inputValue;
+                $(this).attr("data-price", a)
+            }
+        } else {
+            $(this).parent().prev().children('input').css("border", "1px solid #B62830");
+        }
+    });
+
+
+// CAMERA VALIDATION
+
+    $("button.cam1").click(function () {
+        let inputValue = $(this).parent().prev().children('input').val();
+        if (inputValue && inputValue > 0) {
+            $(this).parent().prev().children('input').css("border", "1px solid #81828E");
+            if ($(this).children('span').hasClass("icon-icon_check")) {
+                $(this).children('span').removeClass("icon-icon_check");
+                $(".additional-product-summary.camera1").css("display", "none");
+                $(this).parent().prev().children('input').val("0");
+            } else if (!$(this).children('span').hasClass("icon-icon_check")) {
+                $(this).children('span').addClass("icon-icon_check");
+                $(".additional-product-summary.camera1 .additional-product-amount").text(inputValue + ' szt');
+                $(".additional-product-summary.camera1").css("display", "flex");
+                let a = $(this).attr("data-singe-price") * inputValue;
+                $(this).attr("data-price", a)
+            }
+        } else {
+            $(this).parent().prev().children('input').css("border", "1px solid #B62830");
+        }
+    });
+
+
+    $("button.cam2").click(function () {
+        let inputValue = $(this).parent().prev().children('input').val();
+
+        if (inputValue && inputValue > 0) {
+            $(this).parent().prev().children('input').css("border", "1px solid #81828E");
+            if ($(this).children('span').hasClass("icon-icon_check")) {
+                $(this).children('span').removeClass("icon-icon_check");
+                $(".additional-product-summary.camera2r3").css("display", "none");
+                $(this).parent().prev().children('input').val("0");
+            } else if (!$(this).children('span').hasClass("icon-icon_check")) {
+                $(this).children('span').addClass("icon-icon_check");
+                $(".additional-product-summary.camera2 .additional-product-amount").text(inputValue + ' szt');
+                $(".additional-product-summary.camera2").css("display", "flex");
+                let a = $(this).attr("data-singe-price") * inputValue;
+                $(this).attr("data-price", a)
+            }
+        } else {
+            $(this).parent().prev().children('input').css("border", "1px solid #B62830");
+        }
+    });
+
+
+    $("button.pomp1").click(function () {
+        let inputValue = $(this).parent().prev().children('input').val();
+        if (inputValue && inputValue > 0) {
+            $(this).parent().prev().children('input').css("border", "1px solid #81828E");
+            if ($(this).children('span').hasClass("icon-icon_check")) {
+                $(this).children('span').removeClass("icon-icon_check");
+                $(".additional-product-summary.pompa1").css("display", "none");
+                $(this).parent().prev().children('input').val("0");
+            } else if (!$(this).children('span').hasClass("icon-icon_check")) {
+                $(this).children('span').addClass("icon-icon_check");
+                $(".additional-product-summary.pompa1 .additional-product-amount").text(inputValue + ' szt');
+                $(".additional-product-summary.pompa1").css("display", "flex");
+                let a = $(this).attr("data-singe-price") * inputValue;
+                $(this).attr("data-price", a)
+            }
+        } else {
+            $(this).parent().prev().children('input').css("border", "1px solid #B62830");
+        }
+    });
+
+
+    $("button.pomp2").click(function () {
+        let inputValue = $(this).parent().prev().children('input').val();
+
+        if (inputValue && inputValue > 0) {
+            $(this).parent().prev().children('input').css("border", "1px solid #81828E");
+            if ($(this).children('span').hasClass("icon-icon_check")) {
+                $(this).children('span').removeClass("icon-icon_check");
+                $(".additional-product-summary.pompa2").css("display", "none");
+                $(this).parent().prev().children('input').val("0");
+            } else if (!$(this).children('span').hasClass("icon-icon_check")) {
+                $(this).children('span').addClass("icon-icon_check");
+                $(".additional-product-summary.pompa2 .additional-product-amount").text(inputValue + ' szt');
+                $(".additional-product-summary.pompa2").css("display", "flex");
+                let a = $(this).attr("data-singe-price") * inputValue;
+                $(this).attr("data-price", a)
+            }
+        } else {
+            $(this).parent().prev().children('input').css("border", "1px solid #B62830");
+        }
+    });
+
+
+    $("button.pomp3").click(function () {
+        let inputValue = $(this).parent().prev().children('input').val();
+        if (inputValue && inputValue > 0) {
+            $(this).parent().prev().children('input').css("border", "1px solid #81828E");
+            if ($(this).children('span').hasClass("icon-icon_check")) {
+                $(this).children('span').removeClass("icon-icon_check");
+                $(".additional-product-summary.pompa3").css("display", "none");
+                $(this).parent().prev().children('input').val("0");
+            } else if (!$(this).children('span').hasClass("icon-icon_check")) {
+                $(this).children('span').addClass("icon-icon_check");
+                $(".additional-product-summary.pompa3 .additional-product-amount").text(inputValue + ' szt');
+                $(".additional-product-summary.pompa3").css("display", "flex");
+                let a = $(this).attr("data-singe-price") * inputValue;
+                $(this).attr("data-price", a)
+            }
+        } else {
+            $(this).parent().prev().children('input').css("border", "1px solid #B62830");
+        }
+    });
+
+
+    $("button.pomp4").click(function () {
+        let inputValue = $(this).parent().prev().children('input').val();
+
+        if (inputValue && inputValue > 0) {
+            $(this).parent().prev().children('input').css("border", "1px solid #81828E");
+            if ($(this).children('span').hasClass("icon-icon_check")) {
+                $(this).children('span').removeClass("icon-icon_check");
+                $(".additional-product-summary.pompa4").css("display", "none");
+                $(this).parent().prev().children('input').val("0");
+            } else if (!$(this).children('span').hasClass("icon-icon_check")) {
+                $(this).children('span').addClass("icon-icon_check");
+                $(".additional-product-summary.pompa4 .additional-product-amount").text(inputValue + ' szt');
+                $(".additional-product-summary.pompa4").css("display", "flex");
+                let a = $(this).attr("data-singe-price") * inputValue;
+                $(this).attr("data-price", a)
+            }
+        } else {
+            $(this).parent().prev().children('input').css("border", "1px solid #B62830");
+        }
+    });
+
+
+    $(".tab2-button-place #tab-rekaw").click(function () {
+
+        $(".tab2-accept").show();
+
+    });
+
+    $("#tab-rekaw").click(function () {
+        console.log("123");
+        modelTypeString = "Wolny rękaw";
+        modelNameString = "pneumatyczny M4";
+    });
+
+
+    $(".assyst-next-step").click(function () {
+        $(".assyst-step-1").hide();
+        $(".assyst2").css("display", "flex");
+        $(".assyst-content").hide();
+    });
+
+    currentAssystTab = 0;
+
+    // $(".assyst-tab-1").click(function () {
+    //     $(".assyst-step2-content").hide();
+    //     $(".assyst-tab1").show();
+    //     currentAssystTab = 1;
+    // });
+    //
+    // $(".assyst-tab-2").click(function () {
+    //     $(".assyst-step2-content").hide();
+    //     $(".assyst-tab2").show();
+    //     currentAssystTab = 2;
+    // });
+    //
+    // $(".assyst-tab-3").click(function () {
+    //     $(".assyst-step2-content").hide();
+    //     $(".assyst-tab3").show();
+    //     currentAssystTab = 3;
+    //
+    // });
+
+// turbina-attention-icon attention-p
+
+    $("#assyst-ssak .tab2-button-place button").click(function () {
+        assystChoice = $(this).text();
+        assystSsak = true;
+    });
+
+    $(".choose-assyst-product label").click(function () {
+        assystChoice = $(this).text();
+    });
+
+    var assAss = false;
+
+    /*
+    $(".assyst-accept").click(function () {
+        $(".choose-assyst-product").hide();
+        $(".assyst1-wrapper").hide();
+        $(".assyst-step2-content").show();
+        $(".assyst-type-buttons button").removeClass("button-blue");
+        $(".assyst-card" + currentAssystTab + " span").addClass("icon-icon_check");
+        $(".assyst-brand-" + currentAssystTab + "span").addClass("icon-icon_check");
+
+        $(".assyst-card" + currentAssystTab + " .ssak-p").remove();
+
+        if (assystChoice === "AS 2000 B2" || assystChoice === "AS 2000 M4") {
+            $(".assyst-card1 .ssak-p").remove();
+            $(".assyst-card2 .ssak-p").remove();
+            $(".assyst-card1").prepend("<p class=\"ssak-p\">" + assystChoice + "</p>");
+            $(".assyst-card2").prepend("<p class=\"ssak-p\">" + assystChoice + "</p>");
+
+            $(".assyst-card1").prepend("<p class=\"ssak-p\">Instalacja Ssaka</p>");
+            $(".assyst-card2").prepend("<p class=\"ssak-p\">Instalacja Ssaka</p>");
+
+            $(".assyst-brand-1").next().addClass(checkSign);
+            $(".assyst-brand-2").next().addClass(checkSign);
+
+            $(".assyst-brand-1").text(assystChoice);
+            $(".assyst-brand-2").text(assystChoice);
+
+            $(".assyst-brand-1 span").addClass("icon-icon_check");
+            $(".assyst-brand-2 span").addClass("icon-icon_check");
+            $(".assyst-card1 span").addClass("icon-icon_check");
+            $(".assyst-card2 span").addClass("icon-icon_check");
+            assAss = true;
+
+        } else {
+            if (currentAssystTab === 1 || currentAssystTab === 2) {
+                if (assAss) {
+                    $(".assyst-card1 p.ssak-p").remove();
+                    $(".assyst-card2 p.ssak-p").remove();
+
+                    $(".assyst-brand-1").next().removeClass(checkSign);
+                    $(".assyst-brand-2").next().removeClass(checkSign);
+                    $(".assyst-brand-1").text(assystChoice);
+                    $(".assyst-brand-2").text(assystChoice);
+                    $(".assyst-brand-1 span").removeClass("icon-icon_check");
+                    $(".assyst-brand-2 span").removeClass("icon-icon_check");
+                    $(".assyst-card1 span").removeClass("icon-icon_check");
+                    $(".assyst-card2 span").removeClass("icon-icon_check");
+                    $(".assyst-brand-" + currentAssystTab).next().addClass(checkSign);
+                    $(".assyst-card" + currentAssystTab + " span").addClass("icon-icon_check");
+                    console.log("ZALUPA");
+                    assAss = false;
+                }
+            }
+
+
+            $(".assyst-type-buttons").removeClass("button-blue");
+            $(".assyst-card" + currentAssystTab).prepend("<p class=\"ssak-p\">" + assystChoice + "</p>");
+            $(".assyst-brand-" + currentAssystTab).text(assystChoice);
+            $(".assyst-brand-" + currentAssystTab).next().addClass(checkSign);
+            $(".assyst-card" + currentAssystTab).prepend("<p class=\"ssak-p\">" + assystType + "</p>")
+            // $(".assyst-tab-" + currentAssystTab).addClass("assyst-card-title");
+
+        }
+    });
+
+
+    $(".assyst-cancel").click(function () {
+        $(".choose-assyst-product").hide();
+        $(".assyst1-wrapper").hide();
+        $(".assyst-step2-content").show();
+        $(".assyst-type-buttons button").removeClass("button-blue")
+    });
+*/
+
+    // $(".tab5-cancel").click(function () {
+    //     $(".attention-block-wrapper").hide();
+    // });
+
+    // $("#assyst-strykawko button.tab1-card-button").click(function () {
+    //     assystChoice = $(this).parent().find(".tab1-card-title").text();
+    // });
+    //
+    //
+    // $(".assyst-type-buttons button").click(function () {
+    //     $(".assyst-accept").hide();
+    //
+    // });
+    //
+    // $(".choose-assyst-product label").click(function () {
+    //     $(".assyst-accept").show();
+    // });
+    //
+    // $(".choose-assyst-product .assyst1-wrapper button").click(function () {
+    //     $(".assyst-accept").show();
+    // });
+
+    // $("#Piaskarka label").click(function () {
+    //     var piaskarkaHasClass = $(this).hasClass("turn-szybko");
+    //     if (piaskarkaHasClass) {
+    //         $("#Piaskarka .turbina-attention").css("display", "flex");
+    //     } else {
+    //         $("#Piaskarka .turbina-attention").hide();
+    //     }
+    // });
+    //
+    //
+    // $("#assyst-piaskarka label").click(function () {
+    //     var piaskarkaHasClass = $(this).hasClass("turn-szybko");
+    //     if (piaskarkaHasClass) {
+    //         $("#assyst-piaskarka .turbina-attention").css("display", "flex");
+    //     } else {
+    //         $("#assyst-piaskarka .turbina-attention").hide();
+    //     }
+    // });
+    //
+    //
+    // $(".pneumatic-light-off label").click(function () {
+    //     $(".mikro-attention-icon").show();
+    // });
+
+
+    // truePanelName = (word) =>
+    // {
+    //     if (word === ".certus-neo") {
+    //         return "CERTUS NEO";
+    //     } else if (word === ".certus-max") {
+    //         return "CERTUS MAX"
+    //     } else if (word === ".certus-standart") {
+    //         return "CERTUS STANDART"
+    //     } else if (word === ".exima-neo") {
+    //         return "EXIMA NEO"
+    //     } else if (word === ".exima-max") {
+    //         return "EXIMA MAX"
+    //     } else if (word === ".exima-x1g") {
+    //         return "EXIMA X1G"
+    //     } else if (word === ".exima-x1d") {
+    //         return "EXIMA X1D"
+    //     }
+    // }
+    //
+    // trueColorName = (colorId) =>
+    // {
+    //     if (colorId === "color1" || colorId === "color1_w") {
+    //         return "BORDOWY";
+    //     } else if (colorId === "color2" || colorId === "color2_w") {
+    //         return "BRĄZOWY";
+    //     } else if (colorId === "color3") {
+    //         return "CIEMNO-SZARY";
+    //     } else if (colorId === "color4" || colorId === "color4_w") {
+    //         return "JASNO-SZARY";
+    //     } else if (colorId === "color5" || colorId === "color5_w") {
+    //         return "FIOLETOWY";
+    //     } else if (colorId === "color6" || colorId === "color6_w") {
+    //         return "GRANATOWY";
+    //     } else if (colorId === "color7" || colorId === "color7_w") {
+    //         return "NIEBIESKI";
+    //     } else if (colorId === "color8") {
+    //         return "MORSKI";
+    //     } else if (colorId === "color9" || colorId === "color9_w") {
+    //         return "POMARAŃCZOWY";
+    //     } else if (colorId === "color10" || colorId === "color10_w") {
+    //         return "ŻÓŁTY";
+    //     } else if (colorId === "color11") {
+    //         return "ZIELONY";
+    //     }
+    // }
+    //
+    // trueLampName = (lamp) =>
+    // {
+    //     if (lamp === "lamp1") {
+    //         return "BEZCIENIOWA DIODOWA POLARIS";
+    //     } else if (lamp === "lamp2") {
+    //         return "BEZCIENIOWA DIODA POLARIS SENSOMATIC";
+    //     } else if (lamp === "lamp3") {
+    //         return "BEZCIENIOWA HALOGENOWA ISA";
+    //     } else if (lamp === "lamp4") {
+    //         return "BEZCIENIOWA DIODOWA IRIS Z WBUDOWANĄ KAMERĄ";
+    //     }
+    // }
+    //
+    //
+    // printPdf = () =>
+    // {
+    //     window.print();
+    // }
+
+    function a(t, a, e) {
+        var price = 0;
+        // $(t + " input:checked," + t + " button .icon-icon_check").each(function () {
+        $(t + " input:checked," + t + " button.selected").each(function () {
+            // if ($(this).is("input")) var t = $(this);
+            // else t = $(this).closest("button");
+            // var t = $(this);
+            // console.log($(this).attr('data-price'));
+            $.isNumeric($(this).attr("data-price")) && (price += parseInt($(this).attr("data-price")),
+                $(a).text(numberWithCommas(price) + ""), $(e).text(numberWithCommas(price) + ""));
+        })
+    }
+
+// $("#tab2 .model-card-cover button.model-button").on("click", function () {
+
+// });
+
+// $("input").on("change", function () {
+//     a("body", ".price-number .pr", ".price-numbers-up")
+// });
+// $("button").on("click", function () {
+//     a("body", ".price-numbers-up", ".price-number .pr")
+// });
+
+    // $("#tab5 input").on("change", function () {
+    //     a("#tab5", "#tab5 .price-summary span")
+    // });
+
+    // $("#tab5 button").on("click", function () {
+    //     a("#tab5", "#tab5 .price-summary span")
+    // });
+
+    // $("#tab6 input").on("change", function () {
+    //     a("#tab6", "#tab6 .price-summary")
+    // });
+    //
+    // $("#tab6 button").on("click", function () {
+    //     a("#tab6", "#tab6 .price-summary")
+    // });
+
+
+// $("#tab4 button").on("click", function () {
+//     a("#tab4", "#tab4 .price-summary span")
+// });
+
+    // $("#tab7 button").on("click", function () {
+    //     a("#tab7", "#tab7 .price-summary span")
+    // });
+
+
+// $("button.step-2-button").click(function () {
+
+//   $(".product-summary-list").append("<div class=\"result\"><div class=\"product\">Panel</div><div class=\"version\">" + truePanelName(currentnModel) + "</div><div class=\"product-price\">" + seatPrice + " zl" + "</div>")
+// })
+
+// $("button.step-3-button").click(function () {
+//   $(".product-summary-list").append("<div class=\"result\"><div class=\"product\">Color unitu</div><div class=\"version\">" + trueColorName(seatColor) + "</div><div class=\"product-price\">" + '1000' + " zl" + "</div>")
+// })
+
+// $("button.step-4-button").click(function () {
+//   $(".product-summary-list").append("<div class=\"result\"><div class=\"product\">Lampa</div><div class=\"version\">" + trueLampName(currentLamp) + "</div><div class=\"product-price\">" + $("button#" + currentLamp).attr("data-price") + " zl" + "</div>")
+// })
+
+
+    // qq = () =>
+    // {
+    //     $("#tab5 input:checked, #tab5  button .icon-icon_check, #tab6 .assyst2 input:checked, #tab6 .assyst2  button .icon-icon_check,#tab7  button .icon-icon_check").each(function () {
+    //         $(this).is("input") ?
+    //             $("#result-table tbody").append("<tr  style=\"font-size:9px;\"><td style=\"line-height:30px; border-bottom:1px solid #E4E5ED;width:30%\">" + $(this).attr("data-type") + "</td><td style=\"line-height:30px; border-bottom:1px solid #E4E5ED;\">" + $(this).next().text() + "</td><td style=\"   line-height: 30px; border-bottom:1px solid #E4E5ED;text-align:end;\">" + numberWithCommas($(this).attr("data-price")) + "</td></tr>")
+    //             :
+    //             $("#result-table tbody").append("<tr  style=\"font-size:9px;\"><td style=\"line-height:30px; border-bottom:1px solid #E4E5ED;width:30%\">" + $(this).closest("button").attr("data-type") + "</td><td style=\"line-height:30px; border-bottom:1px solid #E4E5ED;\">" + $(this).closest("button").attr("data-name") + "</td><td style=\"   line-height: 30px; border-bottom:1px solid #E4E5ED;text-align:end;\">" + numberWithCommas($(this).closest("button").attr("data-price")) + "</td></tr>");
+    //     })
+    // }
+    //
+    //
+    // $(".tab7-summ .assyst-next-button").click(function () {
+    //     $(".pdf-price b").text($("header .header-price .price-number").text());
+    //     $("#result-table tbody").empty();
+    //     $("#result-table tbody").append("<tr style=\"font-size:9px;\"><td style=\"line-height:30px;  border-bottom:1px solid #E4E5ED;width:30%\">Panel       </td><td style=\"line-height:30px; width:50%; border-bottom:1px solid #E4E5ED;\">" + truePanelName(currentnModel) + "</td><td style=\"line-height:30px;width:20%; border-bottom:1px solid #E4E5ED;text-align: end;\">" + numberWithCommas(seatPrice) + "</td></tr>");
+    //     $("#result-table tbody").append("<tr style=\"font-size:9px;\"><td style=\"line-height:30px;  border-bottom:1px solid #E4E5ED;width:30%\">Color unitu </td><td style=\"line-height:30px; width:50%; border-bottom:1px solid #E4E5ED;\">" + trueColorName(seatColor) + "</td><td style=\"line-height:30px;width:20%; border-bottom:1px solid #E4E5ED;text-align: end;\">" + numberWithCommas(1000) + "</td></tr>");
+    //     $("#result-table tbody").append("<tr style=\"font-size:9px;\"><td style=\"line-height:30px;  border-bottom:1px solid #E4E5ED;width:30%\">Lampa       </td><td style=\"line-height:30px; width:50%; border-bottom:1px solid #E4E5ED;\">" + trueLampName(currentLamp) + "</td><td style=\"line-height:30px;width:20%; border-bottom:1px solid #E4E5ED;text-align: end;\">" + numberWithCommas($("button#" + currentLamp).attr("data-price")) + "</td></tr>");
+    //     qq()
+    //
+    // });
+
+
+
 
 
     function numberWithCommas(t) {

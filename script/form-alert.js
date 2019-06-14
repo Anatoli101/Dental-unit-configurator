@@ -1,13 +1,22 @@
 function prepareForm(_btn,_form) {
-    $(_form).find(_btn).on('click',function() {
-        $.ajax(
-            {
-                type: "POST",
+    $(_form).find(_btn).on('click',function(e) {
+        e.preventDefault();
+        var file = $(_form).find('#file').prop('files')[0];
+        if(file != undefined) {
+
+            var formData = new FormData($(_form)[0]);
+
+            $.ajax({
                 url: "./../send-form.php",
-                data: $(_form).serialize(),
+                type: 'POST',
+                data: formData,
+                enctype: 'multipart/form-data',
+                cache: false,
+                contentType: false,
+                processData: false,
+
                 success: function(data)
                 {
-                    alert(data);
                     data = $.parseJSON(data);
 
                     if(data['success'] == 1)
@@ -23,11 +32,11 @@ function prepareForm(_btn,_form) {
                         $(_form).find('.form-alert').addClass("msg-error").html(data['msg']).show().delay(5000).fadeOut(400);
                     }
                 },
-                complete: function(data)
-                {
-                }
             });
-
+        }
+        else {
+            $(_form).find('.form-alert').addClass("msg-error").html("NIe załączyłeś żadnego pliku!").show().delay(5000).fadeOut(400);
+        }
         return false;
     });
 
@@ -37,4 +46,3 @@ function prepareForm(_btn,_form) {
 
 };
 prepareForm(".btn-send","#contact-form");
-
